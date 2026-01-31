@@ -1,6 +1,6 @@
 # 📬 Gmail Auto-Summary System
 
-![Gmail Auto Summary](Gmail Auto Summary.PNG)
+![Gmail Auto Summary](Gmail%20Auto%20Summary.PNG)
 
 An AI-powered automation system built with **n8n** that retrieves, filters, and summarizes daily emails into a professional, bilingual (English & Urdu) report.
 
@@ -39,5 +39,5 @@ An AI-powered automation system built with **n8n** that retrieves, filters, and 
 | **Primary Language** | English & Urdu |
 
 ---
-**Developer:** Abdullah Zahid   
+**Developer:** Abdullah Zahid  
 **Certifications:** Microsoft Azure AI Fundamentals (AI-900)
