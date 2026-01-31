@@ -1,39 +1,41 @@
-# 📧 Gmail Auto-Summarizer with AI
+# 📬 Gmail Auto-Summary System
 
-AI-powered email intelligence system that automatically processes emails and delivers bilingual summaries.
+An AI-powered automation system built with **n8n** that retrieves, filters, and summarizes daily emails into a professional, bilingual (English & Urdu) report.
 
-## 🚀 Features
-- Automated daily email processing
-- AI-powered summarization (OpenAI GPT-4o-mini)
-- Bilingual output (Urdu/English)
-- Google Sheets analytics
-- Cost-effective (~$0.10/day)
+## 📽️ Project Demonstration
+* **Video Demo:** [Watch the Workflow in Action](https://drive.google.com/file/d/1p738CtIZ01n3NV1kXd2DE6VD7FRxJHQV/view?usp=drive_link)
 
-## 🛠️ Tech Stack
-- n8n Workflow Automation
-- OpenAI GPT-4o-mini
-- Gmail API
-- Google Sheets API
-- JavaScript
+## 🚀 Key Features
+* **Daily Automation:** Automatically triggers every morning at a scheduled time via the **Schedule Node**.
+* **AI Summarization:** Uses **OpenAI GPT-4o-mini** to generate concise bilingual summaries in Urdu and English.
+* **Smart Filtering:** Custom search queries focus on primary emails and ignore junk, ads, or automated loops.
+* **Professional Delivery:** Sends a beautifully formatted HTML report directly to your inbox.
+* **Analytics Dashboard:** Automatically logs execution data (Date, Day, Email Count) into a Google Sheet.
 
-## 📊 Performance
-- Execution Time: ~30 seconds
-- Email Limit: 20 per run
-- Success Rate: 99%+
-- Daily Cost: $0.10
+## 🛠️ Technical Workflow & Nodes
 
-## 📸 Workflow Diagram
-![Workflow](screenshot.png)
+### 1. Trigger & Data Ingestion
+* **Daily Schedule:** The starting point that triggers the entire system at a specific time every morning.
+* **Gmail (Fetch Important Emails):** Connects to the API and retrieves messages from the Inbox while filtering out noise.
 
-## 🔧 Installation
-1. Import `workflow.json` into n8n
-2. Configure Gmail OAuth credentials
-3. Add OpenAI API key
-4. Connect Google Sheets
-5. Activate workflow
+### 2. Logic & AI Engine
+* **If Node:** A safety check that filters out any messages sent by the automation itself to prevent infinite loops.
+* **AI (Summarize Node):** Powered by **GPT-4o-mini**, this node reads the subject and snippet to create bilingual summaries.
+* **Log Statistics:** Captures metadata like `date`, `day`, and `totalEmails` using n8n expressions.
 
-## 📝 License
-MIT License
+### 3. Aggregation & Delivery
+* **Aggregate All Summaries:** Combines all individual AI outputs into a single structured list.
+* **Gmail (Send Summary Email):** Formats the list into a professional HTML report delivered to the user.
+* **Email Analytics Dashboard:** Appends the log metadata into a **Google Sheet** for long-term tracking.
 
-## 👨‍💻 Developer
-Abdullah Zahid - Bahawalpur, Pakistan
+## 📊 Technical Analysis
+| Component | Implementation |
+| :--- | :--- |
+| **Automation Engine** | n8n |
+| **AI Model** | OpenAI GPT-4o-mini |
+| **Storage** | Google Sheets |
+| **Primary Language** | English & Urdu |
+
+---
+**Developer:** Abdullah Zahid    
+**Certifications:** Microsoft Azure AI Fundamentals (AI-900)
